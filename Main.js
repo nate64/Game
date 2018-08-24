@@ -1,17 +1,15 @@
 $(document).ready(function() {
 
-
 //guess the color the computer is thinking of
 //player chooses from 3 random colors
   //if player guesses on first try, they win,
     //background changes to the correct color
   //else computer wins 
-//program refreshes without reload
+//program refreshes without page reload
 
 //tasks:
 //pull 3 random elements from array, place in new array
   
-
 //Variables
 var left = $("#left")
 var center = $("#center")
@@ -23,10 +21,16 @@ var blue = blue
 var white = white
 var colorList = ["black", "red", "green", "blue", "white"] //add more colors
 var random3Colors = []
-var randomWinningColor 
+var randomWinningColor =[]
 var userChoice
 
-
+var randomColor1 = colorList[Math.floor(Math.random()* colorList.length)]; //.length?? need 3 values
+  random3Colors.push(randomColor1)
+randomColor1 = colorList[Math.floor(Math.random()* colorList.length)]; //.length?? need 3 values
+  random3Colors.push(randomColor1)
+randomColor1 = colorList[Math.floor(Math.random()* colorList.length)]; //.length?? need 3 values
+  random3Colors.push(randomColor1)
+debugger
 
 //Functions
 //pick 3 random colors from colorList
@@ -35,25 +39,29 @@ var userChoice
   //also pass those 3 color names to 3 buttons
 
 
-//sets 3 colors to guess from
-function random3Colors() {
-  random3Colors = colorList.Splice[Math.floor(math.random()* colorList.length), 3 ]; //.length?? need 3 values
-  console.log(colorList.Splice)
-  console.log(random3Colors)
+$(function() {
+function random3() {
+  random3Colors = colorList[Math.floor(Math.random(3)* colorList.length)]; //.length?? need 3 values
   debugger
+  return random3Colors
+  
+  // console.log(colorList.splice)
+  console.log(random3Colors)
   //assign each to 1 of 3 buttons - left, center, right
-
   }
+  })
+
 
 //when user clicks a button...
-left.on('click', function() {
+left.on('click', function(){
   userChoice = left
   //if-else?
   randomWinningColor = random3Colors[Math.floor(Math.random() * random3Colors.length)];
-  console.log(randomWinningColor)
+  console.log (randomWinningColor)
   })
 
 center.on('click', function() {
+  userChoice = center
   randomWinningColor = random3Colors[Math.floor(Math.random() * random3Colors.length)];
   console.log(randomWinningColor)
   })
