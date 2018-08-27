@@ -36,7 +36,6 @@ $(function() {
 function random3() {
   random3Colors = colorList[Math.floor(Math.random(3)* colorList.length)]; 
   return random3Colors
-  
   }
   })
 
